@@ -11,4 +11,8 @@ public interface InboundMessageHandler {
     void receive(Message<ExchangeMessage> m,
                  @Header(AmqpHeaders.CHANNEL) Channel channel,
                  @Header(AmqpHeaders.DELIVERY_TAG) Long deliveryTag);
+    
+    void receiveEventBroadCasts(Message<ExchangeMessage> m,
+                                @Header(AmqpHeaders.CHANNEL) Channel channel,
+                                @Header(AmqpHeaders.DELIVERY_TAG) Long deliveryTag);
 }
